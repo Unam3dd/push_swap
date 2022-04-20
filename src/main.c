@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 18:54:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/20 16:36:47 by stales           ###   ########.fr       */
+/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
+/*   Updated: 2022/04/20 17:18:21 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_putstr(char const *s, char end)
+int main(int ac, char **av)
 {
-	char	*tmp;
-
-	if (!s)
-		return (ft_putstr("(null)", 0));
-	tmp = (char *)s;
-	while (*tmp && *tmp != end)
-		tmp++;
-	return (write(1, s, tmp - s));
+	(void)ac;
+    ft_putstr_fd(av[1], 1);
+    return (0);
 }

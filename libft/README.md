@@ -1,2 +1,2 @@
-# push_swap
-Push swap
+# 42lib
+My 42 libft
