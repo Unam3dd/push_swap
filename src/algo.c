@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 15:09:04 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 15:24:44 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Do nothing if there is only one or no elements.
 */
 
-void	algo_sa(t_stack **s)
+void	algo_swap(t_stack **s)
 {
     t_stack *tmp;
 

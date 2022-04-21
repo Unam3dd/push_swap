@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 14:43:59 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 15:27:15 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct s_stack
     struct s_stack	*prev;
     int				value;
 } t_stack;
+
+typedef struct s_pswap
+{
+	t_stack	*a;
+	t_stack *b;
+} t_pswap;
 
 ///////////////////////////////////////////
 //
@@ -47,10 +53,11 @@ t_stack	*ft_parse_args(int ac, char **av);
 
 ///////////////////////////////////////////
 //
-//              ALGO
+//           SWAP ALGO
 //
 //////////////////////////////////////////
 
-void	algo_sa(t_stack **s);
+void	algo_swap(t_stack **s);
+void	algo_push(t_stack **s, t_stack *new);
 
 #endif

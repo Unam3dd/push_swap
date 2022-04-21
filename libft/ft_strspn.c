@@ -6,15 +6,18 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:01:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/20 20:02:11 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 16:07:31 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strspn(char *s, const char *accept)
+size_t	ft_strspn(char *s, const char *accepts)
 {
-	if (ft_strstr(s, (char *)accept))
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (s && ft_strchr(accepts, s[i]))
+		i++;
+	return (i);
 }

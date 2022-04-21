@@ -4,7 +4,7 @@ SRC				= src/main.c \
 				  src/algo.c
 
 OBJ				:= $(SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -Iincludes
+CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g
 NAME			 = push_swap
 LIBFT			:= libft.a
 LIBFT_SRC		:= libft
@@ -18,7 +18,7 @@ $(LIBFT):
 	make -C $(LIBFT_SRC) all
 
 $(NAME): $(OBJ)
-	gcc -o $@ $(OBJ) $(LIBFT_SRC)/${LIBFT}
+	gcc $(CFLAGS) -o $@ $(OBJ) $(LIBFT_SRC)/${LIBFT}
 
 clean:
 	$(RM) $(OBJ)
