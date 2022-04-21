@@ -60,7 +60,7 @@ BONUS_SRC		:= ft_lstadd_back.c \
 
 OBJ				:= $(BASE_SRC:.c=.o)
 BONUS_OBJ		:= $(BONUS_SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -I../includes -fPIC
+CFLAGS			:= -Wall -Wextra -Werror -I../includes -fPIC -g
 NAME			:= libft.a
 
 all:			$(NAME)

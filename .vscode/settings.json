@@ -4,6 +4,8 @@
         "limits.h": "c",
         "push_swap.h": "c",
         "libft.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "string.h": "c",
+        "stdio.h": "c"
     }
 }

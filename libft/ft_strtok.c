@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:02:53 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 15:42:33 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 18:17:23 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ char	*ft_strtok(char *str, char *token)
 		p = str;
 	if (!p || !token)
 		return (NULL);
+	p += ft_strspn(p, token);
 	str = p;
 	if (!*str)
 		return (NULL);
 	p += ft_strcspn(str, token);
 	if (*p)
 		*p++ = 0;
+	if (*p == 0)
+		p = NULL;
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 16:08:05 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 18:14:53 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 int main(int ac, char **av)
 {
 	//t_pswap p;
+	char *token;
 
 	if (ac < 2)
 		return (1);
-	printf("%lu\n", ft_strspn(av[1], " "));
-	
+	token = ft_strtok(av[1], " ");
+	while (token)
+	{
+		printf("%s\n", token);
+		token = ft_strtok(NULL, " ");
+	}
 	/*p.a = ft_parse_args(ac, av);
-	printf("%d\n", p.a->next->next->value);
 	if (p.a)
 		ft_stack_free(&p.a);
 	*/
