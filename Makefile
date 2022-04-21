@@ -1,6 +1,7 @@
 SRC				= src/main.c \
 				  src/parse.c \
 				  src/stack.c 
+
 OBJ				:= $(SRC:.c=.o)
 CFLAGS			:= -Wall -Wextra -Werror -Iincludes
 NAME			 = push_swap
