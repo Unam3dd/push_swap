@@ -17,7 +17,7 @@ size_t	ft_strspn(char *s, const char *accepts)
 	size_t	i;
 
 	i = 0;
-	while (ft_strchr(accepts, s[i]))
+	while (s[i] && ft_strchr(accepts, s[i]))
 		i++;
 	return (i);
 }
