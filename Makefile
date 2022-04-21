@@ -28,7 +28,6 @@ fclean:			clean
 	$(RM) $(NAME)
 	make -C $(LIBFT_SRC) fclean
 
-re: fclean $(NAME)
-	make -C $(LIBFT_SRC) re
+re: fclean $(LIBFT) $(NAME) 
 
 .PHONY:			all clean fclean re
