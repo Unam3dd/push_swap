@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 21:44:44 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 15:41:56 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 20:24:16 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ t_stack	*ft_parse_tokenize(char *av)
 
 t_stack	*ft_parse_args(int ac, char **av)
 {
-	t_stack *a;
-	t_stack *s;
+	t_stack	*a;
+	t_stack	*s;
 	int		i;
 
 	if (ac < 3)
@@ -52,4 +52,38 @@ t_stack	*ft_parse_args(int ac, char **av)
 		a = a->next;
 	}
     return (s);
+}
+
+int	ft_stack_check_duplicate(t_stack *a, t_stack *actual)
+{
+	t_stack	*tmp;
+
+	if (!actual)
+		return (0);
+	tmp = a;
+	while (tmp)
+	{
+		if (tmp != actual && (tmp->value == actual->value))
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+int ft_check_errors(t_pswap *p)
+{
+	t_stack	*tmp;
+
+	tmp = p->a;
+	while (tmp)
+	{
+		if (ft_stack_check_duplicate(p->a, tmp))
+		{
+			ft_stack_free(&p->a);
+			ft_putstr_fd("Error\n", 1);
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
 }

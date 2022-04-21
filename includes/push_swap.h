@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 15:27:15 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 20:22:16 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	ft_stack_set(t_stack *s, int value);
 
 t_stack	*ft_parse_tokenize(char *av);
 t_stack	*ft_parse_args(int ac, char **av);
+int		ft_stack_check_duplicate(t_stack *a, t_stack *actual);
+int     ft_check_errors(t_pswap *p);
 
 ///////////////////////////////////////////
 //
