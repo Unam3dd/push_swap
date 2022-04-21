@@ -6,16 +6,12 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 13:28:37 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 14:43:59 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 0x20
-#endif
 
 ///////////////////////////////////////////
 //
@@ -48,5 +44,13 @@ void	ft_stack_set(t_stack *s, int value);
 
 t_stack	*ft_parse_tokenize(char *av);
 t_stack	*ft_parse_args(int ac, char **av);
+
+///////////////////////////////////////////
+//
+//              ALGO
+//
+//////////////////////////////////////////
+
+void	algo_sa(t_stack **s);
 
 #endif

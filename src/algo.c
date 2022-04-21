@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   algo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 14:50:39 by stales           ###   ########.fr       */
+/*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
+/*   Updated: 2022/04/21 15:09:04 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int main(int ac, char **av)
+/*sa (swap a): Swap the first 2 elements at the top of stack a.
+Do nothing if there is only one or no elements.
+*/
+
+void	algo_sa(t_stack **s)
 {
-	t_stack	*a;
+    t_stack *tmp;
 
-	if (ac < 2)
-		return (1);
-	a = ft_parse_args(ac, av);
-	printf("%d\n%d\n%d\n", a->value, a->next->value, a->next->next->value);
-	algo_sa(&a);
-	printf("%d\n%d\n%d\n", a->value, a->next->value, a->next->next->value);
-	if (a)
-		ft_stack_free(&a);
-	return (0);
+	if (!*s || !(*s)->next)
+		return ;
+	tmp = (*s)->next;
+	(*s)->next = tmp->next;
+	tmp->next = *s;
+	*s = tmp;
 }
