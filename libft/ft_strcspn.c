@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 13:26:58 by stales           ###   ########.fr       */
+/*   Created: 2022/04/20 20:00:21 by stales            #+#    #+#             */
+/*   Updated: 2022/04/20 20:03:57 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-int main(int ac, char **av)
+size_t	ft_strcspn(char *s, const char *rejects)
 {
-	t_stack	*a;
+	char	*tmp;
 
-	if (ac < 2)
-		return (1);
-	a = ft_parse_args(ac, av);
-	if (a)
-		ft_stack_free(&a);
-	return (0);
+	tmp = s;
+	while (*tmp)
+	{
+		if (ft_strchr(rejects, *tmp))
+			return (tmp - s);
+		tmp++;
+	}
+	return (tmp - s);
 }

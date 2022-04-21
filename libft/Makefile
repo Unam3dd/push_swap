@@ -19,6 +19,7 @@ BASE_SRC		:= ft_atoi.c \
 				   ft_putnbr_fd.c \
 				   ft_putstr_fd.c \
 				   ft_split.c \
+				   ft_split_free.c \
 				   ft_strchr.c \
 				   ft_strdup.c \
 				   ft_striteri.c \
@@ -35,6 +36,9 @@ BASE_SRC		:= ft_atoi.c \
 				   ft_strrchr.c \
 				   ft_strtrim.c \
 				   ft_substr.c \
+				   ft_strtok.c \
+				   ft_strcspn.c \
+				   ft_strspn.c \
 				   ft_tolower.c \
 				   ft_toupper.c \
 				   ft_putchar.c \
@@ -56,7 +60,7 @@ BONUS_SRC		:= ft_lstadd_back.c \
 
 OBJ				:= $(BASE_SRC:.c=.o)
 BONUS_OBJ		:= $(BONUS_SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -I.
+CFLAGS			:= -Wall -Wextra -Werror -I../includes -fPIC
 NAME			:= libft.a
 
 all:			$(NAME)

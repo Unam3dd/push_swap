@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_split_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 13:26:58 by stales           ###   ########.fr       */
+/*   Created: 2022/04/20 21:48:33 by stales            #+#    #+#             */
+/*   Updated: 2022/04/21 12:29:11 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int main(int ac, char **av)
+void	ft_split_free(char **strarr)
 {
-	t_stack	*a;
-
-	if (ac < 2)
-		return (1);
-	a = ft_parse_args(ac, av);
-	if (a)
-		ft_stack_free(&a);
-	return (0);
+	if (!*strarr)
+		return ;
+	while (strarr && *strarr)
+	{
+		free(*strarr);
+		*strarr++ = NULL;
+	}
 }

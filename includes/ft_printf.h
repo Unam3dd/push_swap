@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 13:26:58 by stales           ###   ########.fr       */
+/*   Created: 2022/04/11 17:58:26 by stales            #+#    #+#             */
+/*   Updated: 2022/04/20 21:44:33 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int main(int ac, char **av)
-{
-	t_stack	*a;
+# include <stdarg.h>
 
-	if (ac < 2)
-		return (1);
-	a = ft_parse_args(ac, av);
-	if (a)
-		ft_stack_free(&a);
-	return (0);
-}
+int	ft_putchar(char c);
+int	ft_putstr(char const *str, char end);
+int	ft_putnbr(int n);
+int	ft_putnbu(unsigned int n);
+int	ft_puthex(unsigned long n, char fmt);
+int	ft_va(char *fmt, va_list a);
+int	ft_printf(const char *format, ...);
+
+#endif

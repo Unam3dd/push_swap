@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 13:26:58 by stales           ###   ########.fr       */
+/*   Created: 2022/04/20 20:02:53 by stales            #+#    #+#             */
+/*   Updated: 2022/04/20 20:33:15 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include "libft.h"
 
-int main(int ac, char **av)
+char	*ft_strtok(char *str, char *token)
 {
-	t_stack	*a;
+	static char	*p;
 
-	if (ac < 2)
-		return (1);
-	a = ft_parse_args(ac, av);
-	if (a)
-		ft_stack_free(&a);
-	return (0);
+	if (str)
+		p = str;
+	if (!p || !token)
+		return (NULL);
+	str = p;
+	if (!*str)
+		return (NULL);
+	p += ft_strcspn(str, token);
+	if (*p)
+		*p++ = 0;
+	return (str);
 }

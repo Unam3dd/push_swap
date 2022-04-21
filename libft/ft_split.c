@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student42.fr>               +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 18:54:45 by stales            #+#    #+#             */
-/*   Updated: 2022/04/12 14:43:43 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/21 12:26:54 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i[1] = ft_get_words(s, c);
-	ptr = (char **)malloc(sizeof(char *) * (i[1] + 1));
+	ptr = (char **)malloc(sizeof(char *) * (i[1]));
 	i[0] = -1;
 	while (ptr && ++i[0] < i[1])
 	{
