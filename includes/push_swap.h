@@ -6,12 +6,20 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 20:22:16 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/22 13:15:08 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+///////////////////////////////////////////
+//
+//              DEFINES
+//
+//////////////////////////////////////////
+
+#define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 ///////////////////////////////////////////
 //
@@ -61,5 +69,14 @@ int     ft_check_errors(t_pswap *p);
 
 void	algo_swap(t_stack **s);
 void	algo_push(t_stack **s, t_stack *new);
+
+
+///////////////////////////////////////////
+//
+//              UTILS
+//
+//////////////////////////////////////////
+
+int ft_check_charset(char *str, char *set);
 
 #endif
