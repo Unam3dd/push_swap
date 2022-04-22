@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/22 13:15:08 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/22 16:50:47 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ typedef struct s_pswap
 
 t_stack	*ft_stack_new(int value);
 void	ft_stack_free(t_stack **s);
-void	ft_stack_set(t_stack *s, int value);
+void	ft_stack_push(t_stack **s, t_stack *new);
+void	ft_stack_pop(t_stack **s);
 
 ///////////////////////////////////////////
 //
@@ -63,13 +64,25 @@ int     ft_check_errors(t_pswap *p);
 
 ///////////////////////////////////////////
 //
-//           SWAP ALGO
+//              ALGO SCHEME
 //
 //////////////////////////////////////////
 
 void	algo_swap(t_stack **s);
-void	algo_push(t_stack **s, t_stack *new);
+void	algo_push(t_stack **a, t_stack **b);
 
+
+///////////////////////////////////////////
+//
+//              COMMANDS
+//
+//////////////////////////////////////////
+
+void	sa(t_pswap *p);
+void	sb(t_pswap *p);
+void    ss(t_pswap *p);
+void	pa(t_pswap *p);
+void	pb(t_pswap *p);
 
 ///////////////////////////////////////////
 //

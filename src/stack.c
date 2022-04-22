@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/04/21 15:41:52 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/22 17:01:19 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,21 @@ void	ft_stack_free(t_stack **s)
 		*s = NULL;
 }
 
-void	ft_stack_set(t_stack *s, int value)
+void	ft_stack_push(t_stack **s, t_stack *new)
 {
-	if (s)
-		s->value = value;
+	if (!new)
+		return ;
+	new->next = *s;
+	*s = new;
+}
+
+void	ft_stack_pop(t_stack **s)
+{
+	t_stack	*next;
+
+	if (!*s)
+		return ;
+	next = (*s)->next;
+	free(*s);
+	*s = next;
 }

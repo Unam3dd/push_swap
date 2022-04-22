@@ -1,8 +1,13 @@
 SRC				= src/main.c \
 				  src/parse.c \
 				  src/stack.c \
-				  src/algo.c \
-				  src/utils.c
+				  src/algo_utils.c \
+				  src/utils.c \
+				  src/commands/sa.c \
+				  src/commands/sb.c \
+				  src/commands/ss.c \
+				  src/commands/pa.c \
+				  src/commands/pb.c
 
 OBJ				:= $(SRC:.c=.o)
 CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g
