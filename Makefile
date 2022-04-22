@@ -7,7 +7,10 @@ SRC				= src/main.c \
 				  src/commands/sb.c \
 				  src/commands/ss.c \
 				  src/commands/pa.c \
-				  src/commands/pb.c
+				  src/commands/pb.c \
+				  src/commands/ra.c	\
+				  src/commands/rb.c \
+				  src/commands/rr.c
 
 OBJ				:= $(SRC:.c=.o)
 CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/04/22 17:01:19 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/22 18:09:49 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ t_stack	*ft_stack_new(int value)
 	ptr->next = NULL;
 	ptr->value = value;
 	return (ptr);
+}
+
+t_stack	*ft_stack_get_last(t_stack *s)
+{
+	while (s->next)
+		s = s->next;
+	return (s);
 }
 
 void	ft_stack_free(t_stack **s)

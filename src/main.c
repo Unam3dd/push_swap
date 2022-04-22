@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/22 17:36:11 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/22 18:29:06 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,14 @@ void show_stack(t_stack *s, int i, char n)
 int main(int ac, char **av)
 {
 	t_pswap p;
-	
+
 	if (ac < 2)
 		return (1);
+	p.b = NULL;
 	p.a = ft_parse_args(ac, av);
 	if (ft_check_errors(&p))
 		return (1);
 	if (p.a)
 		ft_stack_free(&p.a);
-	if (p.b)
-		ft_stack_free(&p.b);
 	return (0);
 }
