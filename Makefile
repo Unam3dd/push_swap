@@ -1,6 +1,7 @@
 SRC				= src/main.c \
 				  src/parse.c \
 				  src/stack.c \
+				  src/stack_algo.c \
 				  src/algo_utils.c \
 				  src/utils.c \
 				  src/commands/sa.c \

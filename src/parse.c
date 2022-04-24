@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 21:44:44 by stales            #+#    #+#             */
-/*   Updated: 2022/04/22 13:33:42 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/24 12:58:11 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_stack	*ft_parse_tokenize(char *av)
 {
 	t_stack	*a;
 	t_stack *s;
+	t_stack	*p;
 	char	*token;
 
 	token = ft_strtok(av, " ");
@@ -25,6 +26,7 @@ t_stack	*ft_parse_tokenize(char *av)
 		return (NULL);
 	a = ft_stack_new(ft_atoi(token));
 	s = a;
+	p = a;
 	while (token)
 	{
 		token = ft_strtok(NULL, " ");
@@ -33,7 +35,9 @@ t_stack	*ft_parse_tokenize(char *av)
 		if (ft_check_charset(token, ACHAR))
 			return (NULL);
 		a->next = ft_stack_new(ft_atoi(token));
+		a->next->prev = p;
 		a = a->next;
+		p = a;
 	}
 	return (s);
 }
@@ -42,6 +46,7 @@ t_stack	*ft_parse_args(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*s;
+	t_stack	*p;
 	int		i;
 
 	if (ac < 3)
@@ -51,12 +56,15 @@ t_stack	*ft_parse_args(int ac, char **av)
 	i = 1;
 	a = ft_stack_new(ft_atoi(av[i++]));
 	s = a;
+	p = a;
 	while (s && i < ac)
 	{
 		if (ft_check_charset(av[i], ACHAR))
 			return (NULL);
 		a->next = ft_stack_new(ft_atoi(av[i++]));
+		a->next->prev = p;
 		a = a->next;
+		p = a;
 	}
     return (s);
 }
