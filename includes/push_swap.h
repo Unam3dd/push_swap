@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/24 16:10:10 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/24 16:27:37 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	algo_reverse_rotate(t_stack **s);
 
 void	sa(t_pswap *p);
 void	sb(t_pswap *p);
-void    ss(t_pswap *p);
+void	ss(t_pswap *p);
 void	pa(t_pswap *p);
 void	pb(t_pswap *p);
 void	ra(t_pswap *p);
