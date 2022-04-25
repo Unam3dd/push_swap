@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 12:44:54 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/25 16:12:28 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	algo_push(t_stack **a, t_stack **b)
 	ft_stack_pop(b);
 }
 
+// PATCH TODO
+
 void	algo_rotate(t_stack **s)
 {
 	t_stack	*first;
@@ -50,8 +52,10 @@ void	algo_rotate(t_stack **s)
 	if (!*s)
 		return ;
 	first = *s;
-	end = ft_stack_get_last(*s);
+	end = ft_stack_get_last(first);
 	*s = first->next;
+	first->prev = end;
+	first->next->prev = NULL;
 	first->next = NULL;
 	end->next = first;
 }
@@ -64,8 +68,9 @@ void	algo_reverse_rotate(t_stack **s)
 	if (!*s)
 		return ;
 	first = *s;
-	end = ft_stack_get_last(*s);
-	end->prev->next = NULL;
+	end = ft_stack_get_last(first);
+	if (end->prev)
+		end->prev->next = NULL;
 	end->prev = NULL;
 	end->next = first;
 	*s = end;
