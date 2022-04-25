@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/24 16:09:22 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:58:37 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	algo_rotate(t_stack **s)
 	end->next = first;
 }
 
-// TODO : finish previous struct
 void	algo_reverse_rotate(t_stack **s)
 {
 	t_stack *end;
