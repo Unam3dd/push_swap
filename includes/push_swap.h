@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 12:14:34 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/25 12:48:51 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void	rrr(t_pswap *p);
 //////////////////////////////////////////
 
 int ft_check_charset(char *str, char *set);
+void ft_show_stack(t_stack *s, int i, char n);
 
 #endif
