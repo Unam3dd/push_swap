@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 10:58:37 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/25 12:34:45 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,8 @@ void	algo_reverse_rotate(t_stack **s)
 		return ;
 	first = *s;
 	end = ft_stack_get_last(*s);
-	end->next = first->next;
-	end->next->prev = end;
+	end->prev->next = NULL;
+	end->prev = NULL;
+	end->next = first;
 	*s = end;
-	first->next = NULL;
-	first->prev = end->prev;
-	first->prev->next = first;
-	end = first;
 }
