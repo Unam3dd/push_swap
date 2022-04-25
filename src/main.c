@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 12:33:11 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/25 12:35:48 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int main(int ac, char **av)
 	if (ft_check_errors(&p))
 		return (1);
 	show_stack(p.a, 0, 'A');
-	algo_reverse_rotate(&p.a);
+	algo_rotate(&p.a);
 	show_stack(p.a, 1, 'A');
-	algo_reverse_rotate(&p.a);
+	algo_rotate(&p.a);
 	show_stack(p.a, 2, 'A');
 	if (p.a)
 		ft_stack_free(&p.a);
