@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 11:34:40 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 13:39:07 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 int main(int ac, char **av)
 {
 	t_pswap p;
-	int 	i = -1;
 
 	if (ac < 2)
 		return (1);
@@ -28,13 +27,11 @@ int main(int ac, char **av)
 	p.a = ft_parse_args(ac, av);
 	if (ft_check_errors(&p))
 		return (1);
-	pb(&p);
-	pb(&p);
-	ft_show_stack(p.b, 0, 'B');
-	while (i++, i < 100) {
-		ss(NULL);
-		ft_show_stack(p.b, 0, 'B');
-	}
+	ft_show_stack(p.a, 0, 'A');
+	sa(&p);
+	ft_show_stack(p.a, 0, 'A');
+	rra(&p);
+	ft_show_stack(p.a, 0, 'A');
 	if (p.a)
 		ft_stack_free(&p.a);
 	if (p.b)
