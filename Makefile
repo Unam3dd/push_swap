@@ -17,7 +17,7 @@ SRC				= src/main.c \
 				  src/commands/rrr.c
 
 OBJ				:= $(SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g
+CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g -fPIE
 NAME			 = push_swap
 LIBFT			:= libft.a
 LIBFT_SRC		:= libft

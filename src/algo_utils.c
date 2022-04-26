@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 16:12:28 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 11:27:24 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,22 @@ sb (swap b) Swap the first 2 elements at the top of stack b.
 Do nothing if there is only one or no elements.
 */
 
+// 3 2 1
+
 void	algo_swap(t_stack **s)
 {
-    t_stack *tmp;
+	t_stack *first;
 
 	if (!*s || !(*s)->next)
 		return ;
-	tmp = (*s)->next;
-	(*s)->next = tmp->next;
-	tmp->next = *s;
-	*s = tmp;
+	first = *s;
+	*s = (*s)->next;
+	first->prev = *s;
+	first->next = (*s)->next;
+	if (first->next)
+		first->next->prev = first;
+	(*s)->next = first;
+	(*s)->prev = NULL;
 }
 
 void	algo_push(t_stack **a, t_stack **b)
@@ -37,12 +43,16 @@ void	algo_push(t_stack **a, t_stack **b)
 
 	if (!*b)
 		return ;
+	if (!*a && *b)
+	{
+		*a = ft_stack_new((*b)->value);
+		ft_stack_pop(b);
+		return ;
+	}
 	ptr = ft_stack_new((*b)->value);
 	ft_stack_push(a, ptr);
 	ft_stack_pop(b);
 }
-
-// PATCH TODO
 
 void	algo_rotate(t_stack **s)
 {
@@ -69,9 +79,7 @@ void	algo_reverse_rotate(t_stack **s)
 		return ;
 	first = *s;
 	end = ft_stack_get_last(first);
-	if (end->prev)
-		end->prev->next = NULL;
-	end->prev = NULL;
 	end->next = first;
+	end->prev->next = NULL;
 	*s = end;
 }

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:00:12 by stales            #+#    #+#             */
-/*   Updated: 2022/04/22 16:57:15 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 11:29:06 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void    ss(t_pswap *p)
 {
+	if (!p)
+		return ;
 	algo_swap(&p->a);
 	algo_swap(&p->b);
 }

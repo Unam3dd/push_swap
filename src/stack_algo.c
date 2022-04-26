@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/24 12:40:37 by stales            #+#    #+#             */
-/*   Updated: 2022/04/24 12:41:40 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 11:14:34 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	ft_stack_pop(t_stack **s)
 	if (!*s)
 		return ;
 	next = (*s)->next;
-	next->prev = NULL;
+	if (next)
+		next->prev = NULL;
 	free(*s);
 	*s = next;
 }
