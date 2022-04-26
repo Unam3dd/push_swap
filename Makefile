@@ -25,13 +25,13 @@ LIBFT_SRC		:= libft
 all: $(LIBFT) $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(LIBFT):
 	make -C $(LIBFT_SRC) all
 
 $(NAME): $(OBJ)
-	gcc $(CFLAGS) -o $@ $(OBJ) $(LIBFT_SRC)/${LIBFT}
+	@gcc $(CFLAGS) -o $@ $(OBJ) $(LIBFT_SRC)/${LIBFT}
 
 clean:
 	$(RM) $(OBJ)

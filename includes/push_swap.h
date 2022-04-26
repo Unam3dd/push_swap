@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 13:55:14 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 15:24:26 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_pswap
 {
 	t_stack	*a;
 	t_stack	*b;
+	size_t	s;
 }	t_pswap;
 
 ///////////////////////////////////////////
@@ -60,8 +61,8 @@ void	ft_stack_pop(t_stack **s);
 //
 //////////////////////////////////////////
 
-t_stack	*ft_parse_tokenize(char *av);
-t_stack	*ft_parse_args(int ac, char **av);
+t_stack	*ft_parse_tokenize(char *av, t_pswap *ps);
+t_stack	*ft_parse_args(int ac, char **av, t_pswap *ps);
 int		ft_stack_check_duplicate(t_stack *a, t_stack *actual);
 int		ft_check_errors(t_pswap *p);
 

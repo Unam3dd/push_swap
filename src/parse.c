@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 21:44:44 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 13:58:58 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 16:31:57 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_printf.h"
 #include "libft.h"
 
-t_stack	*ft_parse_tokenize(char *av)
+t_stack	*ft_parse_tokenize(char *av, t_pswap *ps)
 {
 	t_stack	*a;
 	t_stack	*s;
@@ -29,6 +29,7 @@ t_stack	*ft_parse_tokenize(char *av)
 	p = a;
 	while (token)
 	{
+		ps->s++;
 		token = ft_strtok(NULL, " ");
 		if (!token)
 			break ;
@@ -42,7 +43,7 @@ t_stack	*ft_parse_tokenize(char *av)
 	return (s);
 }
 
-t_stack	*ft_parse_args(int ac, char **av)
+t_stack	*ft_parse_args(int ac, char **av, t_pswap *ps)
 {
 	t_stack	*a;
 	t_stack	*s;
@@ -50,7 +51,7 @@ t_stack	*ft_parse_args(int ac, char **av)
 	int		i;
 
 	if (ac < 3)
-		return (ft_parse_tokenize(av[1]));
+		return (ft_parse_tokenize(av[1], ps));
 	if (ft_check_charset(av[1], ACHAR))
 		return (NULL);
 	i = 1;
@@ -66,6 +67,7 @@ t_stack	*ft_parse_args(int ac, char **av)
 		a = a->next;
 		p = a;
 	}
+	ps->s = i - 1;
 	return (s);
 }
 

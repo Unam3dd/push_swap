@@ -66,21 +66,21 @@ NAME			:= libft.a
 all:			$(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME):		$(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 clean:
-	$(RM) $(OBJ)
-	$(RM) $(BONUS_OBJ)
+	@$(RM) $(OBJ)
+	@$(RM) $(BONUS_OBJ)
 
 fclean:			clean
-	$(RM) $(NAME) $(LIBSHARE)
+	@$(RM) $(NAME) $(LIBSHARE)
 
 re:				fclean $(NAME)
 
 bonus:			$(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
+	@ar rcs $(NAME) $(BONUS_OBJ)
 
 .PHONY:			all clean fclean re
