@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:46:36 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 11:30:27 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:25:28 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rr(t_pswap *p)
 {
-    if (!p)
-        return ;
-    algo_rotate(&p->a);
-    algo_rotate(&p->b);
+	if (!p)
+		return ;
+	algo_rotate(&p->a);
+	algo_rotate(&p->b);
 }

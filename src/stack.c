@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 21:20:15 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:28:19 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 t_stack	*ft_stack_new(int value)
 {
-	t_stack *ptr;
+	t_stack	*ptr;
 
 	ptr = (t_stack *)malloc(sizeof(t_stack));
 	if (!ptr)

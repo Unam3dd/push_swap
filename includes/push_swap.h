@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 19:32:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 20:24:05 by stales           ###   ########.fr       */
+/*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
+/*   Updated: 2022/04/26 13:55:14 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 ///////////////////////////////////////////
 //
@@ -21,7 +21,7 @@
 //
 //////////////////////////////////////////
 
-#define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 ///////////////////////////////////////////
 //
@@ -31,16 +31,16 @@
 
 typedef struct s_stack
 {
-    struct s_stack	*next;
-    struct s_stack	*prev;
-    int				value;
-} t_stack;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+	int				value;
+}	t_stack;
 
 typedef struct s_pswap
 {
 	t_stack	*a;
-	t_stack *b;
-} t_pswap;
+	t_stack	*b;
+}	t_pswap;
 
 ///////////////////////////////////////////
 //
@@ -54,7 +54,6 @@ void	ft_stack_free(t_stack **s);
 void	ft_stack_push(t_stack **s, t_stack *new);
 void	ft_stack_pop(t_stack **s);
 
-
 ///////////////////////////////////////////
 //
 //              PARSE
@@ -64,7 +63,7 @@ void	ft_stack_pop(t_stack **s);
 t_stack	*ft_parse_tokenize(char *av);
 t_stack	*ft_parse_args(int ac, char **av);
 int		ft_stack_check_duplicate(t_stack *a, t_stack *actual);
-int     ft_check_errors(t_pswap *p);
+int		ft_check_errors(t_pswap *p);
 
 ///////////////////////////////////////////
 //
@@ -76,7 +75,6 @@ void	algo_swap(t_stack **s);
 void	algo_push(t_stack **a, t_stack **b);
 void	algo_rotate(t_stack **s);
 void	algo_reverse_rotate(t_stack **s);
-
 
 ///////////////////////////////////////////
 //
@@ -96,15 +94,14 @@ void	rra(t_pswap *p);
 void	rrb(t_pswap *p);
 void	rrr(t_pswap *p);
 
-
 ///////////////////////////////////////////
 //
 //              UTILS
 //
 //////////////////////////////////////////
 
-int ft_check_charset(char *str, char *set);
-int ft_check_order(t_pswap *p);
-void ft_show_stack(t_stack *s, int i, char n);
+int		ft_check_charset(char *str, char *set);
+int		ft_check_order(t_pswap *p);
+void	ft_show_stack(t_stack *s, int i, char n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 13:39:41 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:28:02 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Do nothing if there is only one or no elements.
 
 void	algo_swap(t_stack **s)
 {
-	t_stack *first;
+	t_stack	*first;
 
 	if (!*s || !(*s)->next)
 		return ;
@@ -72,7 +72,7 @@ void	algo_rotate(t_stack **s)
 
 void	algo_reverse_rotate(t_stack **s)
 {
-	t_stack *end;
+	t_stack	*end;
 	t_stack	*first;
 
 	if (!*s)

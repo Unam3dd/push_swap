@@ -6,13 +6,13 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:00:12 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 11:29:06 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 14:23:31 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ss(t_pswap *p)
+void	ss(t_pswap *p)
 {
 	if (!p)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 21:44:44 by stales            #+#    #+#             */
-/*   Updated: 2022/04/25 11:38:25 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/26 13:58:58 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 t_stack	*ft_parse_tokenize(char *av)
 {
 	t_stack	*a;
-	t_stack *s;
+	t_stack	*s;
 	t_stack	*p;
 	char	*token;
 
@@ -66,7 +66,7 @@ t_stack	*ft_parse_args(int ac, char **av)
 		a = a->next;
 		p = a;
 	}
-    return (s);
+	return (s);
 }
 
 int	ft_stack_check_duplicate(t_stack *a, t_stack *actual)
@@ -85,7 +85,7 @@ int	ft_stack_check_duplicate(t_stack *a, t_stack *actual)
 	return (0);
 }
 
-int ft_check_errors(t_pswap *p)
+int	ft_check_errors(t_pswap *p)
 {
 	t_stack	*tmp;
 
