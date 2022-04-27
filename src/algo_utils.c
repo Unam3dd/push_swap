@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 02:21:07 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/27 12:47:37 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void	algo_reverse_rotate(t_stack **s)
 	first = *s;
 	end = ft_stack_get_last(first);
 	end->next = first;
-	end->prev->next = NULL;
+	end->next->prev = end;
+	if (end->prev)
+		end->prev->next = NULL; // MAY SEGFALT "3 1 5 6 2 8 7 9 4"
 	*s = end;
 }

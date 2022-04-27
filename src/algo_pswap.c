@@ -3,30 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   algo_pswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 02:24:24 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/27 13:17:01 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+#include <unistd.h>
 
 t_stack		*ft_get_min(t_stack *s)
 {
 	t_stack	*min;
+	int		value;
 	
 	if (!s)
 		return (NULL);
 	min = s;
+	value = s->value;
 	while (s)
 	{
-		if (s->next && s->next->value < s->value)
+		if (s->next && s->value > s->next->value && value > s->next->value)
+		{
 			min = s->next;
+			value = min->value;
+		}
 		s = s->next;
 	}
 	return (min);
 }
+
+// return non zero value is not correct order
 
 int		ft_check_order(t_pswap *p)
 {
@@ -44,8 +53,6 @@ int		ft_check_order(t_pswap *p)
 	return (0);
 }
 
-// TODO
-
 void	ft_pswap(t_pswap *p)
 {
 	t_stack	*ta;
@@ -54,18 +61,40 @@ void	ft_pswap(t_pswap *p)
 
 	if (!p)
 		return ;
+	ta = p->a;
 	i = p->s;
 	min = ft_get_min(p->a);
 	while (ft_check_order(p) && i > 3)
 	{
-		ta = p->a;
-		if (min->value != ta->value)
-			rra(p);
 		if (min->value == ta->value)
 		{
 			pb(p);
-			min = ft_get_min(ta);
+			min = ft_get_min(p->a);
+			ta = p->a;
 			i--;
 		}
+		if (ta->next && min->value == ta->next->value)
+		{
+			sa(p);
+			ta = p->a;
+		}
+		if ((min->value != ta->value) && (ta->next && min->value != ta->next->value)) {
+			rra(p);
+			ta = p->a;
+		}
+		sleep(1);
 	}
+	printf("\n");
+	ft_show_stack(p->a, 0, 'A');
+	printf("\n");
+	ft_show_stack(p->b, 1, 'B');
+	while (i < p->s)
+	{
+		pa(p);
+		i++;
+	}
+	printf("\n");
+	ft_show_stack(p->a, 0, 'A');
+	printf("\n");
+	ft_show_stack(p->b, 1, 'B');
 }

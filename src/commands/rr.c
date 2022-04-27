@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:46:36 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 02:15:22 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/27 13:18:12 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	rr(t_pswap *p)
 		return ;
 	algo_rotate(&p->a);
 	algo_rotate(&p->b);
+	p->op += 2;
 	ft_putstr_fd("rr\n", 1);
 }
