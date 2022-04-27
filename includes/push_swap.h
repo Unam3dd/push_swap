@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 15:24:26 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 01:51:48 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,16 @@ void	rrr(t_pswap *p);
 //////////////////////////////////////////
 
 int		ft_check_charset(char *str, char *set);
-int		ft_check_order(t_pswap *p);
 void	ft_show_stack(t_stack *s, int i, char n);
+
+///////////////////////////////////////////
+//
+//        ALGO PUSH SWAP
+//
+//////////////////////////////////////////
+
+t_stack		*ft_get_min(t_stack *s);
+int			ft_check_order(t_pswap *p);
+void		ft_pswap(t_pswap *p);
 
 #endif

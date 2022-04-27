@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:00:12 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 14:23:31 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 02:17:51 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
 void	ss(t_pswap *p)
@@ -18,4 +19,5 @@ void	ss(t_pswap *p)
 		return ;
 	algo_swap(&p->a);
 	algo_swap(&p->b);
+	ft_putstr_fd("ss\n", 1);
 }

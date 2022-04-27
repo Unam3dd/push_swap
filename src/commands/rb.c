@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:30:20 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 11:30:33 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 02:14:54 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
 void	rb(t_pswap *p)
@@ -17,4 +18,5 @@ void	rb(t_pswap *p)
 	if (!p)
 		return ;
 	algo_rotate(&p->b);
+	ft_putstr_fd("rb\n", 1);
 }

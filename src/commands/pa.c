@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 16:50:15 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 11:30:53 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 02:13:50 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
 void	pa(t_pswap *p)
@@ -17,4 +18,5 @@ void	pa(t_pswap *p)
 	if (!p)
 		return ;
 	algo_push(&p->a, &p->b);
+	ft_putstr_fd("pa\n", 1);
 }

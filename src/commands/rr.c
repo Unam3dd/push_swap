@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rr.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 18:46:36 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 14:25:28 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 02:15:22 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "push_swap.h"
 
 void	rr(t_pswap *p)
@@ -18,4 +19,5 @@ void	rr(t_pswap *p)
 		return ;
 	algo_rotate(&p->a);
 	algo_rotate(&p->b);
+	ft_putstr_fd("rr\n", 1);
 }
