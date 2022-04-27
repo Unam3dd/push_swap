@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 13:17:01 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 15:38:34 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	ft_pswap(t_pswap *p)
 			rra(p);
 			ta = p->a;
 		}
-		sleep(1);
 	}
 	printf("\n");
 	ft_show_stack(p->a, 0, 'A');
