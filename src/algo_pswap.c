@@ -6,7 +6,7 @@
 /*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 19:47:04 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/27 19:52:17 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ t_stack		*ft_get_min(t_stack *s)
 	}
 	return (min);
 }
-
-// return non zero value is not correct order
 
 int		ft_check_order(t_pswap *p)
 {
@@ -89,8 +87,6 @@ void	ft_pswap(t_pswap *p)
 			ta = p->a;
 		}
 	}
-
-
 	if ((ta->value > ta->next->value) && (ta->value < ta->next->next->value) && (ta->next->value < ta->next->next->value))
 		sa(p);
 	if (ta->next && ta->next->next && (ta->value > ta->next->value) && (ta->value > ta->next->next->value) && (ta->next->value > ta->next->next->value))
