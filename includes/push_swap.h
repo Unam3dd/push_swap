@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 13:17:11 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:47:18 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ typedef struct s_pswap
 {
 	t_stack	*a;
 	t_stack	*b;
-	size_t	s;
 	size_t	op;
+	int		s;
 }	t_pswap;
 
 ///////////////////////////////////////////
@@ -102,6 +102,7 @@ void	rrr(t_pswap *p);
 //
 //////////////////////////////////////////
 
+int		ft_stack_get_pos(t_stack *s, t_stack *pos);
 int		ft_check_charset(char *str, char *set);
 void	ft_show_stack(t_stack *s, int i, char n);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_pswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 15:38:34 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 19:46:40 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,22 @@ void	ft_pswap(t_pswap *p)
 {
 	t_stack	*ta;
 	t_stack	*min;
-	size_t	i;
+	int		pos;
+	int		i;
 
 	if (!p)
 		return ;
 	ta = p->a;
 	i = p->s;
 	min = ft_get_min(p->a);
+	pos = ft_stack_get_pos(p->a, min);
 	while (ft_check_order(p) && i > 3)
 	{
 		if (min->value == ta->value)
 		{
 			pb(p);
 			min = ft_get_min(p->a);
+			pos = ft_stack_get_pos(p->a, min);
 			ta = p->a;
 			i--;
 		}
@@ -79,21 +82,35 @@ void	ft_pswap(t_pswap *p)
 			ta = p->a;
 		}
 		if ((min->value != ta->value) && (ta->next && min->value != ta->next->value)) {
-			rra(p);
+			if (pos > (p->s / 2))
+				rra(p);
+			else
+				ra(p);
 			ta = p->a;
 		}
 	}
-	printf("\n");
-	ft_show_stack(p->a, 0, 'A');
-	printf("\n");
-	ft_show_stack(p->b, 1, 'B');
+
+
+	if ((ta->value > ta->next->value) && (ta->value < ta->next->next->value) && (ta->next->value < ta->next->next->value))
+		sa(p);
+	if (ta->next && ta->next->next && (ta->value > ta->next->value) && (ta->value > ta->next->next->value) && (ta->next->value > ta->next->next->value))
+	{
+		sa(p);
+		rra(p);
+	}
+	if (ta->next && ta->next->next && (ta->value > ta->next->next->value) && (ta->next->next->value > ta->next->value))
+		ra(p);
+	if (ta->next && ta->next->next && (ta->value < ta->next->value) && (ta->value < ta->next->next->value) && (ta->next->value > ta->next->next->value))
+	{
+		sa(p);
+		ra(p);
+	}
+	if (ta->next && ta->next->next && (ta->value < ta->next->value) && (ta->next->value > ta->next->next->value) && (ta->next->next->value < ta->value))
+		rra(p);
 	while (i < p->s)
 	{
 		pa(p);
 		i++;
 	}
-	printf("\n");
 	ft_show_stack(p->a, 0, 'A');
-	printf("\n");
-	ft_show_stack(p->b, 1, 'B');
 }

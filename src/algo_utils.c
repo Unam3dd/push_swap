@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 12:47:37 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:35:58 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-sa (swap a): Swap the first 2 elements at the top of stack a.
-Do nothing if there is only one or no elements.
-sb (swap b) Swap the first 2 elements at the top of stack b.
-Do nothing if there is only one or no elements.
-*/
 
 void	algo_swap(t_stack **s)
 {
