@@ -6,7 +6,7 @@
 /*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 02:19:22 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/27 02:24:24 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int		ft_check_order(t_pswap *p)
 	return (0);
 }
 
+// TODO
+
 void	ft_pswap(t_pswap *p)
 {
 	t_stack	*ta;
@@ -63,6 +65,7 @@ void	ft_pswap(t_pswap *p)
 		{
 			pb(p);
 			min = ft_get_min(ta);
+			i--;
 		}
 	}
 }
