@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:47:18 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/28 19:51:22 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,21 @@ void	ft_show_stack(t_stack *s, int i, char n);
 
 ///////////////////////////////////////////
 //
-//        ALGO PUSH SWAP
+//        ALGO UTILS
 //
 //////////////////////////////////////////
 
 t_stack		*ft_get_min(t_stack *s);
-int			ft_check_order(t_pswap *p);
+t_stack		*ft_get_max(t_stack *s);
+int			ft_check_stack_order(t_stack *s);
+
+///////////////////////////////////////////
+//
+//        ALGO PUSH SWAP
+//
+//////////////////////////////////////////
+
 void		ft_pswap(t_pswap *p);
+void		ft_last_algorithm(t_pswap *p);
 
 #endif

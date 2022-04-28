@@ -2,7 +2,7 @@ SRC				= src/main.c \
 				  src/parse.c \
 				  src/stack.c \
 				  src/stack_algo.c \
-				  src/algo_utils.c \
+				  src/algo_op.c \
 				  src/utils.c \
 				  src/commands/sa.c \
 				  src/commands/sb.c \
@@ -15,6 +15,7 @@ SRC				= src/main.c \
 				  src/commands/rra.c \
 				  src/commands/rrb.c \
 				  src/commands/rrr.c \
+				  src/algo_utils.c   \
 				  src/algo_pswap.c
 
 OBJ				:= $(SRC:.c=.o)

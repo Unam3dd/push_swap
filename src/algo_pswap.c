@@ -3,110 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   algo_pswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/27 19:52:17 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/28 19:52:08 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
-
-t_stack		*ft_get_min(t_stack *s)
-{
-	t_stack	*min;
-	int		value;
-	
-	if (!s)
-		return (NULL);
-	min = s;
-	value = s->value;
-	while (s)
-	{
-		if (s->next && s->value > s->next->value && value > s->next->value)
-		{
-			min = s->next;
-			value = min->value;
-		}
-		s = s->next;
-	}
-	return (min);
-}
-
-int		ft_check_order(t_pswap *p)
-{
-	t_stack	*t;
-
-	if (!p || !p->a)
-		return (1);
-	t = p->a;
-	while (t)
-	{
-		if (t->next && t->value > t->next->value)
-			return (1);
-		t = t->next;
-	}
-	return (0);
-}
 
 void	ft_pswap(t_pswap *p)
 {
 	t_stack	*ta;
+	t_stack *tb;
 	t_stack	*min;
-	int		pos;
+	t_stack *max;
 	int		i;
 
 	if (!p)
 		return ;
 	ta = p->a;
+	tb = p->b;
 	i = p->s;
 	min = ft_get_min(p->a);
-	pos = ft_stack_get_pos(p->a, min);
-	while (ft_check_order(p) && i > 3)
+	max = ft_get_max(p->a);
+	while (ft_check_stack_order(p->a) && i > 3)
 	{
-		if (min->value == ta->value)
-		{
+		if (i == p->s && ta->value != max->value) {
 			pb(p);
-			min = ft_get_min(p->a);
-			pos = ft_stack_get_pos(p->a, min);
 			ta = p->a;
+			tb = p->b;
 			i--;
 		}
-		if (ta->next && min->value == ta->next->value)
+		if (ta->value == max->value || ta->value > ta->next->value)
 		{
-			sa(p);
-			ta = p->a;
-		}
-		if ((min->value != ta->value) && (ta->next && min->value != ta->next->value)) {
-			if (pos > (p->s / 2))
-				rra(p);
-			else
-				ra(p);
+			ra(p);
 			ta = p->a;
 		}
 	}
-	if ((ta->value > ta->next->value) && (ta->value < ta->next->next->value) && (ta->next->value < ta->next->next->value))
-		sa(p);
-	if (ta->next && ta->next->next && (ta->value > ta->next->value) && (ta->value > ta->next->next->value) && (ta->next->value > ta->next->next->value))
-	{
-		sa(p);
-		rra(p);
-	}
-	if (ta->next && ta->next->next && (ta->value > ta->next->next->value) && (ta->next->next->value > ta->next->value))
-		ra(p);
-	if (ta->next && ta->next->next && (ta->value < ta->next->value) && (ta->value < ta->next->next->value) && (ta->next->value > ta->next->next->value))
-	{
-		sa(p);
-		ra(p);
-	}
-	if (ta->next && ta->next->next && (ta->value < ta->next->value) && (ta->next->value > ta->next->next->value) && (ta->next->next->value < ta->value))
-		rra(p);
+	ft_last_algorithm(p);
 	while (i < p->s)
 	{
 		pa(p);
 		i++;
 	}
-	ft_show_stack(p->a, 0, 'A');
+}
+
+void	ft_last_algorithm(t_pswap *p)
+{
+	if ((p->a->value > p->a->next->value) 
+		&& (p->a->value < p->a->next->next->value) 
+		&& (p->a->next->value < p->a->next->next->value))
+		sa(p);
+	if (p->a->next && p->a->next->next 
+		&& (p->a->value > p->a->next->value) 
+		&& (p->a->value > p->a->next->next->value) 
+		&& (p->a->next->value > p->a->next->next->value))
+	{
+		sa(p);
+		rra(p);
+	}
+	if (p->a->next && p->a->next->next 
+		&& (p->a->value > p->a->next->next->value) 
+		&& (p->a->next->next->value > p->a->next->value))
+		ra(p);
+	if (p->a->next && p->a->next->next 
+		&& (p->a->value < p->a->next->value) 
+		&& (p->a->value < p->a->next->next->value) 
+		&& (p->a->next->value > p->a->next->next->value))
+	{
+		sa(p);
+		ra(p);
+	}
+	if (p->a->next && p->a->next->next 
+		&& (p->a->value < p->a->next->value) 
+		&& (p->a->next->value > p->a->next->next->value) 
+		&& (p->a->next->next->value < p->a->value))
+		rra(p);
 }

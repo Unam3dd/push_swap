@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:34:00 by sam              ###   ########.fr       */
+/*   Updated: 2022/04/28 19:44:52 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ int	main(int ac, char **av)
 		return (1);
 	
 	// ALGO MAIN
-	ft_pswap(&p);
-
-	printf("\nCycle : %zd\n", p.op);
-
+	
 	if (p.a)
 		ft_stack_free(&p.a);
 	if (p.b)

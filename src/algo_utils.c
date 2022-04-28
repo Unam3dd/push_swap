@@ -3,76 +3,66 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:35:58 by sam              ###   ########.fr       */
+/*   Created: 2022/04/28 19:50:06 by stales            #+#    #+#             */
+/*   Updated: 2022/04/28 19:50:50 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo_swap(t_stack **s)
+t_stack		*ft_get_min(t_stack *s)
 {
-	t_stack	*first;
-
-	if (!*s || !(*s)->next)
-		return ;
-	first = *s;
-	*s = (*s)->next;
-	first->prev = *s;
-	first->next = (*s)->next;
-	if (first->next)
-		first->next->prev = first;
-	(*s)->next = first;
-	(*s)->prev = NULL;
-}
-
-void	algo_push(t_stack **a, t_stack **b)
-{
-	t_stack	*ptr;
-
-	if (!*b)
-		return ;
-	if (!*a && *b)
+	t_stack	*min;
+	int		value;
+	
+	if (!s)
+		return (NULL);
+	min = s;
+	value = s->value;
+	while (s)
 	{
-		*a = ft_stack_new((*b)->value);
-		ft_stack_pop(b);
-		return ;
+		if (s->next && s->value > s->next->value && value > s->next->value)
+		{
+			min = s->next;
+			value = min->value;
+		}
+		s = s->next;
 	}
-	ptr = ft_stack_new((*b)->value);
-	ft_stack_push(a, ptr);
-	ft_stack_pop(b);
+	return (min);
 }
 
-void	algo_rotate(t_stack **s)
+t_stack		*ft_get_max(t_stack *s)
 {
-	t_stack	*first;
-	t_stack	*end;
-
-	if (!*s)
-		return ;
-	first = *s;
-	end = ft_stack_get_last(first);
-	*s = first->next;
-	first->prev = end;
-	first->next->prev = NULL;
-	first->next = NULL;
-	end->next = first;
+	t_stack	*max;
+	int		value;
+	
+	if (!s)
+		return (NULL);
+	max = s;
+	value = s->value;
+	while (s)
+	{
+		if (s->next && s->value < s->next->value && value < s->next->value)
+		{
+			max = s->next;
+			value = max->value;
+		}
+		s = s->next;
+	}
+	return (max);
 }
 
-void	algo_reverse_rotate(t_stack **s)
+int	ft_check_stack_order(t_stack *s)
 {
-	t_stack	*end;
-	t_stack	*first;
-
-	if (!*s)
-		return ;
-	first = *s;
-	end = ft_stack_get_last(first);
-	end->next = first;
-	end->next->prev = end;
-	if (end->prev)
-		end->prev->next = NULL; // MAY SEGFALT "3 1 5 6 2 8 7 9 4"
-	*s = end;
+	if (!s)
+		return (1);
+	while (s)
+	{
+		if (s->next && s->value > s->next->value)
+			return (1);
+		s = s->next;
+	}
+	return (0);
 }
