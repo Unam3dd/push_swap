@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 19:50:06 by stales            #+#    #+#             */
-/*   Updated: 2022/04/28 19:50:50 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/28 19:57:59 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,19 @@ int	ft_check_stack_order(t_stack *s)
 	while (s)
 	{
 		if (s->next && s->value > s->next->value)
+			return (1);
+		s = s->next;
+	}
+	return (0);
+}
+
+int ft_check_stack_reverse_order(t_stack *s)
+{
+    if (!s)
+		return (1);
+	while (s)
+	{
+		if (s->next && s->next->value > s->value)
 			return (1);
 		s = s->next;
 	}

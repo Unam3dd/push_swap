@@ -6,11 +6,13 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/28 19:52:08 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/28 23:43:32 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#include <unistd.h>
 
 void	ft_pswap(t_pswap *p)
 {
@@ -39,6 +41,34 @@ void	ft_pswap(t_pswap *p)
 		{
 			ra(p);
 			ta = p->a;
+		}
+		if (ta->value < ta->next->value)
+		{
+			pb(p);
+			ta = p->a;
+			tb = p->b;
+			while (ta->next && ta->value < ta->next->value && i > 3)
+			{
+				pb(p);
+				ta = p->a;
+				tb = p->b;
+				i--;
+			}
+			while (ft_check_stack_reverse_order(p->b) && p->b)
+			{
+				if (tb->value < tb->next->value)
+				{
+					sb(p);
+					tb = p->b;
+				} else
+				{
+					rrb(p);
+					tb = p->b;
+				}
+			}
+			ta = p->a;
+			tb = p->b;
+			i--;
 		}
 	}
 	ft_last_algorithm(p);
