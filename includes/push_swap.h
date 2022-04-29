@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/28 21:39:54 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:01:25 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 //////////////////////////////////////////
 
 # define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-# define fils_de_pute if
 
 ///////////////////////////////////////////
 //
@@ -125,6 +124,7 @@ int			ft_check_stack_reverse_order(t_stack *s);
 //////////////////////////////////////////
 
 void		ft_pswap(t_pswap *p);
+void		ft_three_algorithm(t_stack **s);
 void		ft_last_algorithm(t_pswap *p);
 
 #endif
