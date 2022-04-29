@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/29 18:02:38 by stales           ###   ########.fr       */
+/*   Updated: 2022/04/29 18:23:33 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,14 @@ void	ft_pswap(t_pswap *p)
 			pos = ft_stack_get_pos(p->a, min);
 			i--;
 		}
+		if (p->a->next 
+			&& p->a->next->next 
+			&& p->a->next->value < p->a->next->next->value 
+			&& p->a->value > p->a->next->value)
+			sa(p);
 		if (min->value != p->a->value && pos > p->s / 2)
 		{
-			ra(p);
+			rra(p);
 			pos = ft_stack_get_pos(p->a, min);
 		} else if (min->value != p->a->value) {
 			ra(p);
