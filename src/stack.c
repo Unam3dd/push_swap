@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/04/26 14:28:19 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 15:18:50 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack	*ft_stack_new(int value)
 		return (NULL);
 	ptr->prev = NULL;
 	ptr->next = NULL;
+	ptr->index = 0;
 	ptr->value = value;
 	return (ptr);
 }
@@ -32,6 +33,37 @@ t_stack	*ft_stack_get_last(t_stack *s)
 	while (s->next)
 		s = s->next;
 	return (s);
+}
+
+t_stack	*ft_get_stack_value(t_stack *s, int value)
+{
+	while (s)
+	{
+		if (s->value == value)
+			return (s);
+		s = s->next;
+	}
+	return (s);
+}
+
+void	ft_stack_index(t_stack *s)
+{
+	t_stack	*tmp;
+	int	index;
+	int	counter;
+	int	i;
+
+	index = 0;
+	i = ft_get_min(s)->value;
+	counter = ft_get_max(s)->value;
+	tmp = NULL;
+	while (i <= counter)
+	{
+		tmp = ft_get_stack_value(s, i);
+		if (tmp)
+			tmp->index = index++;
+		i++;
+	}
 }
 
 void	ft_stack_free(t_stack **s)

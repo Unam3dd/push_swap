@@ -6,21 +6,21 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/04/29 18:23:33 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 15:18:28 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void	ft_pswap(t_pswap *p)
+void	ft_pswap_small(t_pswap *p)
 {
 	t_stack	*min;
 	t_stack *max;
 	int		i;
 	int		pos;
 
-	if (!p)
+	if (!p || p->s > 6)
 		return ;
 	i = p->s;
 	min = ft_get_min(p->a);

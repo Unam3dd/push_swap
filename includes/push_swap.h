@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/04/29 15:01:25 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 15:18:36 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 	int				value;
+	int				index;
 }	t_stack;
 
 typedef struct s_pswap
@@ -52,9 +53,11 @@ typedef struct s_pswap
 
 t_stack	*ft_stack_new(int value);
 t_stack	*ft_stack_get_last(t_stack *s);
+t_stack	*ft_get_stack_value(t_stack *s, int value);
 void	ft_stack_free(t_stack **s);
 void	ft_stack_push(t_stack **s, t_stack *new);
 void	ft_stack_pop(t_stack **s);
+void	ft_stack_index(t_stack *s);
 
 ///////////////////////////////////////////
 //
@@ -123,8 +126,7 @@ int			ft_check_stack_reverse_order(t_stack *s);
 //
 //////////////////////////////////////////
 
-void		ft_pswap(t_pswap *p);
-void		ft_three_algorithm(t_stack **s);
+void		ft_pswap_small(t_pswap *p);
 void		ft_last_algorithm(t_pswap *p);
 
 #endif
