@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/05/02 18:42:20 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 18:55:13 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ int	main(int ac, char **av)
 	// ALGO MAIN
 	ft_stack_index(p.a);
 
-	ft_pswap_small(&p);
-
-	ft_radix_sort(&p);
+	if (p.s <= 5)
+		ft_pswap_small(&p);
+	else
+		ft_radix_sort(&p);
 
 	if (p.a)
 		ft_stack_free(&p.a);

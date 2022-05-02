@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/05/02 18:43:39 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 19:03:44 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ void	ft_last_algorithm(t_pswap *p)
 		&& (p->a->next->value > p->a->next->next->value) 
 		&& (p->a->next->next->value < p->a->value))
 		rra(p);
+	if (p->s == 2 && (p->a->value > p->a->next->value))
+		sa(p);
 }
 
 int	ft_counts_bits(int value)
