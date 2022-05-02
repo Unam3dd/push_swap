@@ -6,12 +6,13 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/05/02 15:18:28 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 18:43:39 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
+#include <stdio.h>
 
 void	ft_pswap_small(t_pswap *p)
 {
@@ -88,4 +89,54 @@ void	ft_last_algorithm(t_pswap *p)
 		&& (p->a->next->value > p->a->next->next->value) 
 		&& (p->a->next->next->value < p->a->value))
 		rra(p);
+}
+
+int	ft_counts_bits(int value)
+{
+	int c;
+
+	c = 0;
+	while (value)
+	{
+		c++;
+		value >>= 1;
+	}
+	return (c);
+}
+
+void	ft_radix_sort(t_pswap *p)
+{
+	t_stack	*tmp;
+	int s;
+	int v;
+	int i;
+
+	if (p->s <= 5)
+		return ;
+	s = 0;
+	i = 0;
+	tmp = ft_get_max(p->a);
+	if (tmp)
+		v = tmp->index;
+	while (ft_check_stack_order(p->a))
+	{
+		i = 0;
+		tmp = p->a;
+		while (i <= v)
+		{
+			if (!(tmp->index >> s & 0x1))
+				pb(p);
+			else
+				ra(p);
+			tmp = p->a;
+			i++;
+		}
+		tmp = p->b;
+		while (tmp)
+		{
+			pa(p);
+			tmp = p->b;
+		}
+		s++;
+	}
 }

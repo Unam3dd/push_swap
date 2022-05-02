@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:15:24 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:33:49 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/02 15:44:03 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_show_stack(t_stack *s, int i, char n)
 	ft_printf("%c :\n", n);
 	while (s)
 	{
-		ft_printf("%d : %d\n", i, s->value);
+		ft_printf("%d : %d | %d\n", i, s->index, s->value);
 		s = s->next;
 	}
 }

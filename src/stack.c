@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/05/02 15:18:50 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/02 17:52:08 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
-t_stack	*ft_stack_new(int value)
+t_stack	*ft_stack_new(int value, int index)
 {
 	t_stack	*ptr;
 
@@ -23,7 +23,7 @@ t_stack	*ft_stack_new(int value)
 		return (NULL);
 	ptr->prev = NULL;
 	ptr->next = NULL;
-	ptr->index = 0;
+	ptr->index = index;
 	ptr->value = value;
 	return (ptr);
 }
