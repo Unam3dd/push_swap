@@ -6,14 +6,13 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/05/03 15:12:19 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/03 16:00:58 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_printf.h"
 #include "libft.h"
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -27,11 +26,13 @@ int	main(int ac, char **av)
 	p.a = ft_parse_args(ac, av, &p);
 	if (ft_check_errors(&p))
 		return (1);
-	ft_stack_index(p.a);
 	if (p.s <= 5)
 		ft_pswap_small(&p);
 	else
+	{
+		ft_stack_index(p.a);
 		ft_radix_sort(&p);
+	}
 	if (p.a)
 		ft_stack_free(&p.a);
 	if (p.b)
