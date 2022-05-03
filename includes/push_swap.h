@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/05/02 19:01:53 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:35:49 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 //
 //////////////////////////////////////////
 
-# define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+# define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ*^+><"
 
 ///////////////////////////////////////////
 //
@@ -115,10 +115,10 @@ void	ft_show_stack(t_stack *s, int i, char n);
 //
 //////////////////////////////////////////
 
-t_stack		*ft_get_min(t_stack *s);
-t_stack		*ft_get_max(t_stack *s);
-int			ft_check_stack_order(t_stack *s);
-int			ft_check_stack_reverse_order(t_stack *s);
+t_stack	*ft_get_min(t_stack *s);
+t_stack	*ft_get_max(t_stack *s);
+int		ft_check_stack_order(t_stack *s);
+int		ft_check_stack_reverse_order(t_stack *s);
 
 ///////////////////////////////////////////
 //
@@ -126,9 +126,9 @@ int			ft_check_stack_reverse_order(t_stack *s);
 //
 //////////////////////////////////////////
 
-int			ft_counts_bits(int value);
-void		ft_pswap_small(t_pswap *p);
-void		ft_last_algorithm(t_pswap *p);
-void		ft_radix_sort(t_pswap *p);
+void	ft_pswap_small(t_pswap *p);
+void	ft_last_algo_ext1(t_pswap *p);
+void	ft_last_algo_ext2(t_pswap *p);
+void	ft_radix_sort(t_pswap *p);
 
 #endif

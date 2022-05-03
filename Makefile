@@ -19,7 +19,7 @@ SRC				= src/main.c \
 				  src/algo_pswap.c
 
 OBJ				:= $(SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -Iincludes -g -fPIE
+CFLAGS			:= -Wall -Wextra -Werror -Iincludes -fPIE
 NAME			 = push_swap
 LIBFT			:= libft.a
 LIBFT_SRC		:= libft

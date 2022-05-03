@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:59:57 by stales            #+#    #+#             */
-/*   Updated: 2022/05/02 17:52:08 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/03 12:31:35 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ t_stack	*ft_get_stack_value(t_stack *s, int value)
 void	ft_stack_index(t_stack *s)
 {
 	t_stack	*tmp;
-	int	index;
-	int	counter;
-	int	i;
+	int		index;
+	int		counter;
+	int		i;
 
 	index = 0;
 	i = ft_get_min(s)->value;

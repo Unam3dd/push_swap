@@ -6,139 +6,102 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/05/02 19:04:17 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/03 15:03:30 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_pswap_small(t_pswap *p)
 {
 	t_stack	*min;
-	t_stack *max;
-	int		i;
-	int		pos;
+	int		i[2];
 
-	if (!p || p->s > 6)
+	if (!p)
 		return ;
-	i = p->s;
+	i[0] = p->s;
 	min = ft_get_min(p->a);
-	pos = ft_stack_get_pos(p->a, min);
-	max = ft_get_max(p->a);
-	while (ft_check_stack_order(p->a) && i > 3)
+	i[1] = ft_stack_get_pos(p->a, min);
+	while (ft_check_stack_order(p->a) && i[0] > 3)
 	{
-		if (min->value == p->a->value) {
+		if (min->value == p->a->value)
+		{
 			pb(p);
 			min = ft_get_min(p->a);
-			pos = ft_stack_get_pos(p->a, min);
-			i--;
+			i[0]--;
 		}
-		if (p->a->next 
-			&& p->a->next->next 
-			&& p->a->next->value < p->a->next->next->value 
-			&& p->a->value > p->a->next->value)
-			sa(p);
-		if (min->value != p->a->value && pos > p->s / 2)
-		{
+		i[1] = ft_stack_get_pos(p->a, min);
+		if (min->value != p->a->value && i[1] > p->s / 2)
 			rra(p);
-			pos = ft_stack_get_pos(p->a, min);
-		} else if (min->value != p->a->value) {
+		else if (min->value != p->a->value)
 			ra(p);
-			pos = ft_stack_get_pos(p->a, min);
-		}
 	}
-	ft_last_algorithm(p);
-	while (i < p->s)
-	{
+	ft_last_algo_ext1(p);
+	while (i[0]++ < p->s)
 		pa(p);
-		i++;
-	}
 }
 
-void	ft_last_algorithm(t_pswap *p)
+void	ft_last_algo_ext1(t_pswap *p)
 {
-	if (p->a->next && p->a->next->next 
-		&& (p->a->value > p->a->next->value) 
-		&& (p->a->value < p->a->next->next->value) 
+	if (p->a->next && p->a->next->next && (p->a->value > p->a->next->value)
+		&& (p->a->value < p->a->next->next->value)
 		&& (p->a->next->value < p->a->next->next->value))
 		sa(p);
-	if (p->a->next && p->a->next->next 
-		&& (p->a->value > p->a->next->value) 
-		&& (p->a->value > p->a->next->next->value) 
+	if (p->a->next && p->a->next->next && (p->a->value > p->a->next->value)
+		&& (p->a->value > p->a->next->next->value)
 		&& (p->a->next->value > p->a->next->next->value))
 	{
 		sa(p);
 		rra(p);
 	}
-	if (p->a->next && p->a->next->next 
-		&& (p->a->value > p->a->next->next->value) 
+	if (p->a->next && p->a->next->next
+		&& (p->a->value > p->a->next->next->value)
 		&& (p->a->next->next->value > p->a->next->value))
 		ra(p);
-	if (p->a->next && p->a->next->next 
-		&& (p->a->value < p->a->next->value) 
-		&& (p->a->value < p->a->next->next->value) 
+	if (p->a->next && p->a->next->next && (p->a->value < p->a->next->value)
+		&& (p->a->value < p->a->next->next->value)
 		&& (p->a->next->value > p->a->next->next->value))
 	{
 		sa(p);
 		ra(p);
 	}
-	if (p->a->next && p->a->next->next 
-		&& (p->a->value < p->a->next->value) 
-		&& (p->a->next->value > p->a->next->next->value) 
+	ft_last_algo_ext2(p);
+}
+
+void	ft_last_algo_ext2(t_pswap *p)
+{
+	if (p->a->next && p->a->next->next
+		&& (p->a->value < p->a->next->value)
+		&& (p->a->next->value > p->a->next->next->value)
 		&& (p->a->next->next->value < p->a->value))
 		rra(p);
 	if (p->s == 2 && (p->a->value > p->a->next->value))
 		sa(p);
 }
 
-int	ft_counts_bits(int value)
-{
-	int c;
-
-	c = 0;
-	while (value)
-	{
-		c++;
-		value >>= 1;
-	}
-	return (c);
-}
-
 void	ft_radix_sort(t_pswap *p)
 {
 	t_stack	*tmp;
-	int s;
-	int v;
-	int i;
+	int		i[3];
 
-	if (p->s <= 5)
-		return ;
-	s = 0;
-	i = 0;
+	ft_bzero(i, 3);
 	tmp = ft_get_max(p->a);
 	if (tmp)
-		v = tmp->index;
+		i[2] = tmp->index;
 	while (ft_check_stack_order(p->a))
 	{
-		i = 0;
-		tmp = p->a;
-		while (i <= v)
+		i[1] = 0;
+		while (i[1] <= i[2])
 		{
-			if (!(tmp->index >> s & 0x1))
+			if (!(p->a->index >> i[0] & 0x1))
 				pb(p);
 			else
 				ra(p);
-			tmp = p->a;
-			i++;
+			i[1]++;
 		}
-		tmp = p->b;
-		while (tmp)
-		{
+		while (p->b)
 			pa(p);
-			tmp = p->b;
-		}
-		s++;
+		i[0]++;
 	}
 }

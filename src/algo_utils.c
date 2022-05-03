@@ -6,17 +6,17 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 19:50:06 by stales            #+#    #+#             */
-/*   Updated: 2022/05/02 14:16:19 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/03 10:45:35 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack		*ft_get_min(t_stack *s)
+t_stack	*ft_get_min(t_stack *s)
 {
 	t_stack		*min;
 	int			value;
-	
+
 	if (!s)
 		return (NULL);
 	min = s;
@@ -33,12 +33,12 @@ t_stack		*ft_get_min(t_stack *s)
 	return (min);
 }
 
-t_stack		*ft_get_max(t_stack *s)
+t_stack	*ft_get_max(t_stack *s)
 {
 	t_stack	*max;
 	int		value;
 	int		index;
-	
+
 	if (!s)
 		return (NULL);
 	max = s;
@@ -69,9 +69,9 @@ int	ft_check_stack_order(t_stack *s)
 	return (0);
 }
 
-int ft_check_stack_reverse_order(t_stack *s)
+int	ft_check_stack_reverse_order(t_stack *s)
 {
-    if (!s)
+	if (!s)
 		return (1);
 	while (s)
 	{
