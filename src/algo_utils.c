@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 19:50:06 by stales            #+#    #+#             */
-/*   Updated: 2022/05/03 15:38:05 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 23:01:03 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,11 @@ t_stack	*ft_get_max(t_stack *s)
 {
 	t_stack	*max;
 	int		value;
-	int		index;
 
 	if (!s)
 		return (NULL);
 	max = s;
 	value = s->value;
-	index = 0;
 	while (s)
 	{
 		if (s->next && s->value < s->next->value && value < s->next->value)
@@ -54,6 +52,13 @@ t_stack	*ft_get_max(t_stack *s)
 		s = s->next;
 	}
 	return (max);
+}
+
+t_stack	*ft_get_by_index(t_stack *s, int index)
+{
+	while (s && s->index != index)
+		s = s->next;
+	return (s);
 }
 
 int	ft_check_stack_order(t_stack *s)

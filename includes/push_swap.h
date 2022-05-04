@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/05/04 14:55:23 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 23:01:06 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ void	ft_show_stack(t_stack *s, int i, char n);
 
 t_stack	*ft_get_min(t_stack *s);
 t_stack	*ft_get_max(t_stack *s);
+t_stack	*ft_get_by_index(t_stack *s, int index);
 int		ft_check_stack_order(t_stack *s);
 int		ft_check_stack_reverse_order(t_stack *s);
 
@@ -122,5 +123,16 @@ void	ft_pswap_small(t_pswap *p);
 void	ft_last_algo_ext1(t_pswap *p);
 void	ft_last_algo_ext2(t_pswap *p);
 void	ft_radix_sort(t_pswap *p);
+
+///////////////////////////////////////////
+//
+//        ALGO FOR 100
+//
+//////////////////////////////////////////
+
+int		ft_check_index(t_stack *s, int m, int median);
+void	ft_pswap_sort_algo_b(t_pswap *p, int i, int max);
+void	ft_pswap_100(t_pswap *p);
+void	ft_pswap_median(t_pswap *p, int m);
 
 #endif

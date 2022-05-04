@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/05/04 15:18:23 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 21:37:40 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,13 @@ int	main(int ac, char **av)
 		return (1);
 	if (p.s <= 5)
 		ft_pswap_small(&p);
-	else
+	else if (p.s)
 	{
 		ft_stack_index(p.a);
-		ft_radix_sort(&p);
+		if (p.s == 100)
+			ft_pswap_100(&p);
+		else
+			ft_radix_sort(&p);
 	}
 	if (p.a)
 		ft_stack_free(&p.a);

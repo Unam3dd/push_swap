@@ -16,7 +16,8 @@ SRC				= src/main.c \
 				  src/commands/rrb.c \
 				  src/commands/rrr.c \
 				  src/algo_utils.c   \
-				  src/algo_pswap.c
+				  src/algo_pswap.c	 \
+				  src/algo_spec.c
 
 OBJ				:= $(SRC:.c=.o)
 CFLAGS			:= -Wall -Wextra -Werror -Iincludes -fPIE -g
