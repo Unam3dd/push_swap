@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 01:30:27 by sam               #+#    #+#             */
-/*   Updated: 2022/05/03 19:50:15 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:45:51 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ void	ft_radix_sort(t_pswap *p)
 		i[1] = 0;
 		while (i[1] <= i[2])
 		{
-			tmp = ft_stack_get_last(p->a);
 			if (p->a && !(p->a->index >> i[0] & 0x1))
 				pb(p);
 			else
