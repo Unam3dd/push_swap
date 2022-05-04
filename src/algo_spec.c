@@ -6,7 +6,7 @@
 /*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:27:41 by sam               #+#    #+#             */
-/*   Updated: 2022/05/05 00:47:17 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/05 00:57:27 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_pswap_sort_algo_b(t_pswap *p, int i, int max)
 		}
 		else if (p->b->next && p->b->next->index == max)
 			sb(p);
-		else if (pos >= 11)
+		else if (pos >= 10)
 			rrb(p);
 		else
 			rb(p);
