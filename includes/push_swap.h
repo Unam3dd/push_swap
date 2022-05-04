@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/05/04 14:31:27 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:38:46 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,6 @@ void	ft_pswap_small(t_pswap *p);
 void	ft_last_algo_ext1(t_pswap *p);
 void	ft_last_algo_ext2(t_pswap *p);
 void	ft_radix_sort(t_pswap *p);
+void	ft_sort_100(t_pswap *p);
 
 #endif
