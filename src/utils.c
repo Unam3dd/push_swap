@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 13:15:24 by stales            #+#    #+#             */
-/*   Updated: 2022/05/03 11:18:40 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:15:54 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	ft_show_stack(t_stack *s, int i, char n)
 	}
 }
 
-int	ft_check_charset(char *str, char *set)
+int	ft_check_charset(char *str)
 {
 	while (*str)
 	{
-		if (ft_strchr(set, *str))
+		if (*str < '0' || *str > '9')
 			return (1);
 		str++;
 	}

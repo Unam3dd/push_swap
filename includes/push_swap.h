@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/05/03 17:09:52 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:16:04 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <stddef.h>
-
-///////////////////////////////////////////
-//
-//              DEFINES
-//
-//////////////////////////////////////////
-
-# define ACHAR "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ*^+><"
 
 ///////////////////////////////////////////
 //
@@ -106,7 +98,7 @@ void	rrr(t_pswap *p);
 //////////////////////////////////////////
 
 int		ft_stack_get_pos(t_stack *s, t_stack *pos);
-int		ft_check_charset(char *str, char *set);
+int		ft_check_charset(char *str);
 void	ft_show_stack(t_stack *s, int i, char n);
 
 ///////////////////////////////////////////
