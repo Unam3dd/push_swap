@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   algo_spec.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:27:41 by sam               #+#    #+#             */
-/*   Updated: 2022/05/05 00:57:27 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/05 17:38:54 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-int		ft_check_index(t_stack *s, int m, int median)
+int	ft_check_index(t_stack *s, int m, int median)
 {
 	while (s)
 	{
@@ -22,9 +22,9 @@ int		ft_check_index(t_stack *s, int m, int median)
 			return (1);
 		else if (m == 1 && s->index > median && s->index <= median * 2)
 			return (1);
-		else if (m == 2 && s->index > median*2 && s->index <= median * 3)
+		else if (m == 2 && s->index > median * 2 && s->index <= median * 3)
 			return (1);
-		else if (m == 3 && s->index > median*3 && s->index <= median * 4)
+		else if (m == 3 && s->index > median * 3 && s->index <= median * 4)
 			return (1);
 		s = s->next;
 	}
@@ -38,7 +38,7 @@ void	ft_pswap_100(t_pswap *p)
 	ft_pswap_median(p, 2);
 	ft_pswap_sort_algo_b(p, 50, 75);
 	ft_pswap_median(p, 1);
-	ft_pswap_sort_algo_b(p, 26, 49);
+	ft_pswap_sort_algo_b(p, 25, 50);
 	ft_pswap_median(p, 0);
 	ft_pswap_sort_algo_b(p, 0, 25);
 }
@@ -48,7 +48,7 @@ void	ft_pswap_sort_algo_b(t_pswap *p, int i, int max)
 	t_stack	*s;
 	int		pos;
 
-	while (p->b && max > i)
+	while (p->b && max >= i)
 	{
 		s = ft_get_by_index(p->b, max);
 		pos = ft_stack_get_pos(p->b, s);

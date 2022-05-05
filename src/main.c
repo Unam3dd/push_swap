@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/05/04 21:37:40 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/05 16:29:35 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int ac, char **av)
 		return (1);
 	if (p.s <= 5)
 		ft_pswap_small(&p);
-	else if (p.s)
+	else
 	{
 		ft_stack_index(p.a);
 		if (p.s == 100)
