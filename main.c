@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:50:25 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:34:00 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/06 17:27:08 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf.h"
-#include "libft.h"
-#include <stdio.h>
 
 int	main(int ac, char **av)
 {
@@ -27,12 +24,16 @@ int	main(int ac, char **av)
 	p.a = ft_parse_args(ac, av, &p);
 	if (ft_check_errors(&p))
 		return (1);
-	
-	// ALGO MAIN
-	ft_pswap(&p);
-
-	printf("\nCycle : %zd\n", p.op);
-
+	if (p.s <= 5)
+		ft_pswap_small(&p);
+	else
+	{
+		ft_stack_index(p.a);
+		if (p.s == 100)
+			ft_pswap_100(&p);
+		else
+			ft_radix_sort(&p);
+	}
 	if (p.a)
 		ft_stack_free(&p.a);
 	if (p.b)

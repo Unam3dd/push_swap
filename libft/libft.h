@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:16:35 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 16:32:18 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/06 17:44:20 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include "ft_printf.h"
 
 typedef struct s_list
 {
@@ -56,7 +57,7 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
 size_t			ft_strcspn(char *s, const char *rejects);
 size_t			ft_strspn(char *s, const char *accepts);
-int				ft_atoi(const char *nptr);
+long int		ft_atoi(const char *nptr);
 int				ft_get_words(char const *str, char c);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);

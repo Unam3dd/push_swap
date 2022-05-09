@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_utils.c                                       :+:      :+:    :+:   */
+/*   algo_op.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 14:41:32 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 17:35:58 by sam              ###   ########.fr       */
+/*   Updated: 2022/05/06 17:21:54 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void	algo_push(t_stack **a, t_stack **b)
 		return ;
 	if (!*a && *b)
 	{
-		*a = ft_stack_new((*b)->value);
+		*a = ft_stack_new((*b)->value, (*b)->index);
 		ft_stack_pop(b);
 		return ;
 	}
-	ptr = ft_stack_new((*b)->value);
+	ptr = ft_stack_new((*b)->value, (*b)->index);
 	ft_stack_push(a, ptr);
 	ft_stack_pop(b);
 }
@@ -56,7 +56,8 @@ void	algo_rotate(t_stack **s)
 	end = ft_stack_get_last(first);
 	*s = first->next;
 	first->prev = end;
-	first->next->prev = NULL;
+	if (first->next)
+		first->next->prev = NULL;
 	first->next = NULL;
 	end->next = first;
 }
@@ -73,6 +74,6 @@ void	algo_reverse_rotate(t_stack **s)
 	end->next = first;
 	end->next->prev = end;
 	if (end->prev)
-		end->prev->next = NULL; // MAY SEGFALT "3 1 5 6 2 8 7 9 4"
+		end->prev->next = NULL;
 	*s = end;
 }
