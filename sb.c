@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 15:49:23 by stales            #+#    #+#             */
-/*   Updated: 2022/04/27 13:17:48 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/10 09:19:35 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ void	sb(t_pswap *p)
 	if (!p)
 		return ;
 	algo_swap(&p->b);
-	p->op++;
 	ft_putstr_fd("sb\n", 1);
 }

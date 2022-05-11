@@ -6,11 +6,52 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 21:27:41 by sam               #+#    #+#             */
-/*   Updated: 2022/05/06 17:26:23 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/11 17:26:50 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+static int		psw_search_block_index(t_stack *s, int min, int max, int r, int index)
+{
+	int count;
+
+	count = 0;
+	if (r)
+		s = ft_stack_get_last(s);
+	while (s)
+	{
+		if (index == s->index && s->index >= min && s->index <= max)
+			break ;
+		if (r)
+			s = s->prev;
+		else
+			s = s->next;
+		count++;
+	}
+	return (count);
+}
+
+static int		psw_search_set(t_stack *s, int min, int max, int r)
+{
+	int count;
+
+	count = 0;
+	if (r)
+		s = ft_stack_get_last(s);
+	while (s)
+	{
+		if (s->index >= min && s->index < max)
+			break ;
+		if (r)
+			s = s->prev;
+		else
+			s = s->next;
+		count++;
+	}
+	return (count);
+}
 
 int	ft_check_index(t_stack *s, int m, int median)
 {

@@ -6,7 +6,7 @@
 /*   By: stales <stales@student.42.angouleme.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:50:31 by stales            #+#    #+#             */
-/*   Updated: 2022/05/06 17:24:26 by stales           ###   ########.fr       */
+/*   Updated: 2022/05/11 15:07:14 by stales           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,14 @@ int		ft_check_index(t_stack *s, int m, int median);
 void	ft_pswap_sort_algo_b(t_pswap *p, int i, int max);
 void	ft_pswap_100(t_pswap *p);
 void	ft_pswap_median(t_pswap *p, int m);
+
+///////////////////////////////////////////
+//
+//        ALGO FOR 100 2
+//
+///////////////////////////////////////////
+
+void	pswap_100_n(t_pswap *p);
+void	pswap_100_ntest(t_pswap *p);
 
 #endif

@@ -17,10 +17,11 @@ SRC				= main.c \
 				  rrr.c \
 				  algo_utils.c   \
 				  algo_pswap.c	 \
-				  algo_spec.c
+				  algo_spec.c	 \
+				  last_algo.c
 
 OBJ				:= $(SRC:.c=.o)
-CFLAGS			:= -Wall -Wextra -Werror -Ilibft -fPIE -g
+CFLAGS			:= -Ilibft -fPIE -g
 NAME			 = push_swap
 LIBFT			:= libft.a
 LIBFT_SRC		:= libft
